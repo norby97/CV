@@ -1,18 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-
-  <div class="jumbotron" style="height: 150px; width: 1000px">
-    <h3>Welcome to my website.</h3>
-    <div class="row justify-content-md-right align-items-right">
-        <div>
-          <div class="col-md-12" style="text-align: right;"><span class="text-secondary"><b>Simon </b></span><span class="text-secondary">Norbert</span></div>
-        </div>
-    </div>
+  <div class="alert alert-dismissible alert-default">
+  <div>
+    <div class="col-md-12" style="text-align: right;"><span class="text-secondary"><b>Simon </b></span><span class="text-secondary">Norbert</span></div>
   </div>
+</div>
 
-
-
-  <ul class="nav nav-tabs">
+  <ul class="nav nav-tabs" style="width: 995px">
     <li class="nav-item">
       <a id="1" class="nav-link active" [ngClass]="{'active': selectedIndex == 1}" (click)="setSelected(1)">About me</a>
     </li>
@@ -31,22 +25,24 @@
   </ul>
 
   <div *ngIf="selectedIndex==1;">
-    <div class="list-group">
+    <div class="list-group mt-1">
         <p class="about-container">
           <img src="assets/images/me.png" height="300px" style="border: 5px solid #DDDDDD;">
         </p>
         <div *ngFor="let info of personal">
           <h3 class="aboutmetext">{{info.name}}</h3>
         </div>
-        <h3 class="aboutmetext"><img class="githubimg" src="assets/images/gmail.png"> Email:<a href="mailto:simonorbi97@gmail.com"> simonorbi97@gmail.com</a></h3>
-        <h3 class="aboutmetext"><img class="githubimg" src="assets/images/github.png"> Github: <a href="https://github.com/norby97">Link</a></h3>
-        <h3 class="aboutmetext"><img class="githubimg" src="assets/images/linkedin.png"> LinkedIn: <a href="https://github.com/norby97">Link</a></h3>
-        <h3 class="aboutmetext"><a href="assets/valami.pdf" download>My Curriculum Vitae</a></h3>
+        <div class="aboutmetext">
+          <h3><img class="icon" src="assets/images/gmail.png"> Email:<a href="mailto:simonorbi97@gmail.com"> simonorbi97@gmail.com</a></h3>
+          <h3><img class="icon" src="assets/images/github.png"> Github: <a href="https://github.com/norby97">Link</a></h3>
+          <h3><img class="icon" src="assets/images/linkedin.png"> LinkedIn: <a href="https://github.com/norby97">Link</a></h3>
+          <h3><a href="assets/cv.pdf" download>My Curriculum Vitae</a></h3>
+          </div>
     </div>
   </div>
 
   <div *ngIf="selectedIndex==2;">
-    <ul class="list-group">
+    <ul class="list-group  ">
       <li class="list-group-item d-flex justify-content-between align-items-center">
         Kölcsey Ferenc National College, Satu Mare, Mathematics-Informatics profile
         <span class="badge badge-dark badge-pill">High School</span>
@@ -64,10 +60,10 @@
 
     <div *ngIf="selectedIndex==3;">
       <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mt-1">
         <h3>IDE Tools & Frameworks</h3>
         <div *ngFor="let ide of ides">
-          <ul class="list-group">
+          <ul class="list-group mt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">{{ide.name}}
               <span class="badge badge-success badge-pill">{{ide.exp}}</span>
             </li>
@@ -75,20 +71,20 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4 mt-1">
         <h3>Programming languages</h3>
         <div *ngFor="let lang of languages">
-          <ul class="list-group">
+          <ul class="list-group mt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">{{lang.name}}
               <span class="badge badge-danger badge-pill">{{lang.exp}}</span>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mt-1">
         <h3>Database/Operating Systems</h3>
         <div *ngFor="let system of systems">
-          <ul class="list-group">
+          <ul class="list-group mt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">{{system.name}}
               <span class="badge badge-warning badge-pill">{{system.exp}}</span>
             </li>
@@ -105,6 +101,20 @@
           <strong>{{ability.desc}}</strong>
         </div>
       </div>
-
     </div>
+</div>
+
+<div *ngIf="selectedIndex==5;" class="mt-1" >
+  <div class="row">
+    <div *ngFor="let work of works">
+      <div class="card text-white ml-3 + {{work.style}}" style="max-width: 20rem;">
+        <div class="card-header">{{work.name}}</div>
+        <div class="card-body">
+          <h4 class="card-title">{{work.title}}</h4>
+          <p class="card-text">{{work.description}}</p>
+        </div>
+        <div class="card-footer">{{work.footer}}</div>
+      </div>
+    </div>
+  </div>
 </div>

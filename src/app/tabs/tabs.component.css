@@ -9,9 +9,15 @@ li { cursor: pointer; }
   margin-left: 200px
 }
 
-.githubimg{
+.icon{
   height: 35px;
   line-height: 30px;
   padding: 3px;
   margin-bottom: 10px;
+}
+
+.jumbotron{
+  height: 105px;
+  width: 1000px;
+  padding-top: initial;
 }
