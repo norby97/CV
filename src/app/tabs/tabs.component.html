@@ -1,38 +1,51 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to my resumee!
-  </h1>
+<div class="container">
 
-</div>
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a id="1" class="nav-link active" [ngClass]="next === 2 ? 'active' : 'nav-link'"  href="#aboutme">About me</a>
-  </li>
-  <li class="nav-item">
-    <a id="2" class="nav-link" [ngClass]="next === 2 ? 'active' : 'nav-link'" href="#education">Education</a>
-  </li>
-  <li class="nav-item">
-    <a id="3" class="nav-link" href="#skills">Skills</a>
-  </li>
-  <li class="nav-item">
-    <a id="4" class="nav-link" href="#employment">Employment History</a>
-  </li>
-  <li class="nav-item" (click)="dropdown(1,2)">
-    <a id="5" class="nav-link" href="# ">as </a>
-  </li>
-</ul>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade show active" id="home">
-    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+  <div class="jumbotron" style="height: 150px; width: 1000px">
+    <h3>Welcome to my website.</h3>
+    <div class="row justify-content-md-right align-items-right">
+        <div>
+          <div class="col-md-12" style="text-align: right;"><span class="text-secondary"><b>Simon </b></span><span class="text-secondary">Norbert</span></div>
+        </div>
+    </div>
   </div>
-  <div class="tab-pane fade" id="profile">
-    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+
+
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a id="1" class="nav-link active" [ngClass]="{'active': selectedIndex == 1}" (click)="setSelected(1)">About me</a>
+    </li>
+    <li class="nav-item">
+      <a id="2" class="nav-link" [ngClass]="{'active': selectedIndex == 2}" (click)="setSelected(2)">Education</a>
+    </li>
+    <li class="nav-item">
+      <a id="3" class="nav-link" [ngClass]="{'active': selectedIndex == 3}" (click)="setSelected(3)">Skills</a>
+    </li>
+    <li class="nav-item">
+      <a id="4" class="nav-link" [ngClass]="{'active': selectedIndex == 4}" (click)="setSelected(4)">Employment History</a>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedIndex==1;">
+    <div class="list-group">
+        <p class="about-container">
+          <img src="../assets/images/me.jpg" height="300px" style="border: 5px solid #DDDDDD;">
+        </p>
+        <div *ngFor="let info of personal">
+          <h3 class="aboutmetext">{{info.name}}</h3>
+        </div>
+        <h3 class="aboutmetext"><img class="githubimg" src="../assets/images/gmail.png"> Email:<a href="mailto:simonorbi97@gmail.com"> simonorbi97@gmail.com</a></h3>
+        <h3 class="aboutmetext"><img class="githubimg" src="../assets/images/github.png"> Github: <a href="https://github.com/norby97">Link</a></h3>
+        <h3 class="aboutmetext"><img class="githubimg" src="../assets/images/linkedin.png"> LinkedIn: <a href="https://github.com/norby97">Link</a></h3>
+        <h3 class="aboutmetext"><a href="assets/valami.pdf" download>My Curriculum Vitae</a></h3>
+    </div>
   </div>
-  <div class="tab-pane fade" id="dropdown1">
-    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-  </div>
-  <div class="tab-pane fade" id="dropdown2">
-    <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
-  </div>
+
+  <div *ngIf="selectedIndex==2;">
+
+
+    </div>
+  <div *ngIf="selectedIndex==3;">3Content to render when condition is true.</div>
+  <div *ngIf="selectedIndex==4;">4Content to render when condition is true.</div>
 </div>

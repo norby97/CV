@@ -1,0 +1,17 @@
+li { cursor: pointer; }
+
+.about-container {
+  line-height: 100px;
+  height:0px
+}
+
+.aboutmetext{
+  margin-left: 200px
+}
+
+.githubimg{
+  height: 35px;
+  line-height: 30px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
