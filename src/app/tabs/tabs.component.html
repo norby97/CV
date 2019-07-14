@@ -23,7 +23,10 @@
       <a id="3" class="nav-link" [ngClass]="{'active': selectedIndex == 3}" (click)="setSelected(3)">Skills</a>
     </li>
     <li class="nav-item">
-      <a id="4" class="nav-link" [ngClass]="{'active': selectedIndex == 4}" (click)="setSelected(4)">Employment History</a>
+      <a id="4" class="nav-link" [ngClass]="{'active': selectedIndex == 4}" (click)="setSelected(4)">Abilities</a>
+    </li>
+    <li class="nav-item">
+      <a id="5" class="nav-link" [ngClass]="{'active': selectedIndex == 5}" (click)="setSelected(5)">Employment History</a>
     </li>
   </ul>
 
@@ -43,9 +46,65 @@
   </div>
 
   <div *ngIf="selectedIndex==2;">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Kölcsey Ferenc National College, Satu Mare, Mathematics-Informatics profile
+        <span class="badge badge-dark badge-pill">High School</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Babes Bolyai University, Cluj-Napoca, Faculty of Mathematics and Computer Science, Computer Science, Currently enrolled
+        <span class="badge badge-dark badge-pill">Superior studies</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Babes Bolyai University, Cluj-Napoca, Faculty of Mathematics and Computer Science, Master Degree
+        <span class="badge badge-warning badge-pill">Future Plans</span>
+      </li>
+    </ul>
+  </div>
 
+    <div *ngIf="selectedIndex==3;">
+      <div class="row">
+      <div class="col-md-4">
+        <h3>IDE Tools & Frameworks</h3>
+        <div *ngFor="let ide of ides">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">{{ide.name}}
+              <span class="badge badge-success badge-pill">{{ide.exp}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h3>Programming languages</h3>
+        <div *ngFor="let lang of languages">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">{{lang.name}}
+              <span class="badge badge-danger badge-pill">{{lang.exp}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Database/Operating Systems</h3>
+        <div *ngFor="let system of systems">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">{{system.name}}
+              <span class="badge badge-warning badge-pill">{{system.exp}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedIndex==4;" >
+    <div class="row">
+      <div *ngFor="let ability of abilities" class="col-md-6 ">
+        <div class="alert alert-dismissible mt-2 + {{ability.style}}">
+          <strong>{{ability.desc}}</strong>
+        </div>
+      </div>
 
     </div>
-  <div *ngIf="selectedIndex==3;">3Content to render when condition is true.</div>
-  <div *ngIf="selectedIndex==4;">4Content to render when condition is true.</div>
 </div>
