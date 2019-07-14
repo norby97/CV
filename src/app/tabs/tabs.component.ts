@@ -9,7 +9,7 @@ import {ViewEncapsulation} from '@angular/core';
 })
 export class TabsComponent implements OnInit {
 
-  selectedIndex = 4;
+  selectedIndex = 1;
 
   styles = ["alert-info","alert-danger","alert-warning","alert-primary","alert-secondary","alert-light","alert-dark","alert-success"];
 
